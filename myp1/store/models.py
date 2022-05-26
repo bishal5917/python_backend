@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+
 from django.db import models
 from sqlalchemy import ForeignKey
 
@@ -12,6 +12,9 @@ class Promotion(models.Model):
 
 class Collection(models.Model):
     title = models.CharField(max_length=255)
+    featured_product = models.ForeignKey(
+        'Product', on_delete=models.SET_NULL, null=True, related_name="+")
+    # related_name=+ means not to create reverse relationship
 
 
 class Product(models.Model):
