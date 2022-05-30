@@ -1,5 +1,9 @@
 <html>
   <body>
-    <h1>This is From HTML</h1>
+    <ul>
+      {% for item in cust %}
+      <li>{{item.first_name}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
