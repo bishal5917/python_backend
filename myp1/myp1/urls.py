@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header="ADMIN DASHBOARD"
+admin.site.index_title="ADMIN"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),

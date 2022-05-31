@@ -16,6 +16,12 @@ class Collection(models.Model):
         'Product', on_delete=models.SET_NULL, null=True, related_name="+")
     # related_name=+ means not to create reverse relationship
 
+    def __str__(self) -> str:
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
@@ -39,6 +45,9 @@ class Customer(models.Model):
         indexes = [
             models.Index(fields=['last_name', 'first_name'])
         ]
+        
+    def __str__(self) -> str:
+        return self.first_name
 
 
 class Order(models.Model):
