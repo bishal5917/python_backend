@@ -1,6 +1,7 @@
 
 from audioop import reverse
 from urllib.parse import urlencode
+from django.contrib.contenttypes.admin import GenericTabularInline
 from django.db.models import Count
 from django.contrib import admin
 from django.http import HttpRequest
